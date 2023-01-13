@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: input-script-workflow
+spec:
+  entrypoint: input-script
+  templates:
+  - name: input-script
+    script:
+      image: alpine:3.12
+      command: ["sh"]
+      source: |
+        echo "Running script"
+        echo "Input parameter: ${inputs.parameters.message}"
+    inputs:
+      parameters:
+      - name: message
