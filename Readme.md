@@ -6,3 +6,6 @@
 
 # 목차
 * [hello-world](./hello-world.yaml)
+* [container-template](./container-template.yaml)
+* [python-script-template](./python-script-template.yaml)
+* [shell-script-template](./shell-script-template.yaml)

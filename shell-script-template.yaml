@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: shell-script-workflow
+spec:
+  templates:
+  - name: shell-script
+    script:
+      image: alpine:3.12
+      command: ["sh"]
+      source: |
+        echo "hello world shell"

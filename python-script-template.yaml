@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: python-script-workflow
+spec:
+  templates:
+  - name: python-script
+    script:
+      image: python:3.9
+      command: ["python"]
+      source: |
+        import os
+        print("hello world python")
