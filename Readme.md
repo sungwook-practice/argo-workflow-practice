@@ -10,3 +10,4 @@
 * [python-script-template](./python-script-template.yaml)
 * [shell-script-template](./shell-script-template.yaml)
 * [input](./input-shell-script.yaml)
+* [stemp-template](./step-template.yaml)

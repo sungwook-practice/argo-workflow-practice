@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: step-workflow
+  namespace: argo
+spec:
+  entrypoint: step-example
+  templates:
+    - name: step-example
+      steps:
+        - - name: task-1
+            template: shell-script
+            arguments:
+              parameters:
+                - name: message
+                  value: "echo Running task 1"
+          - name: task-2
+            template: shell-script
+            arguments:
+              parameters:
+                - name: message
+                  value: "echo Running task 1"
+    - name: shell-script
+      inputs:
+        parameters:
+          - name: message
+      script:
+        image: alpine:3.12
+        command: ["sh"]
+        source: |
+          echo "message: {{inputs.parameters.message}}"
