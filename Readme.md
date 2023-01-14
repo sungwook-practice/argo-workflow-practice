@@ -12,3 +12,5 @@
 * [input](./input-shell-script.yaml)
 * [step template 병렬실행](./step-parallel-template.yaml)
 * [step template 순서대로 실행](./step-sequence-template.yaml)
+* [dag template 병렬실행](./dag-parallel-template.yaml)
+* [dag template 순서대로 실행](./dag-sequence-template.yaml)

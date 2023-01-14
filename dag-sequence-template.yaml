@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: dag-sequence-workflow
+  namespace: argo
+spec:
+  entrypoint: dag
+  templates:
+    - name: dag
+      dag:
+        tasks:
+          - name: task-1
+            template: shell-script
+            arguments:
+              parameters:
+                - name: script
+                  value: echo "Running task 1"
+          - name: task-2
+            dependencies: [task-1]
+            template: shell-script
+            arguments:
+              parameters:
+                - name: script
+                  value: echo "Running task 2"
+    - name: shell-script
+      inputs:
+        parameters:
+          - name: script
+      container:
+        image: alpine:latest
+        command: ["/bin/sh", "-c"]
+        args: ["{{inputs.parameters.script}}"]
