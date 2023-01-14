@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  name: step-workflow
+  name: step-sequence-workflow
   namespace: argo
 spec:
   entrypoint: step-example
@@ -14,7 +14,7 @@ spec:
               parameters:
                 - name: message
                   value: "echo Running task 1"
-          - name: task-2
+        - - name: task-2
             template: shell-script
             arguments:
               parameters:

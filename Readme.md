@@ -10,4 +10,5 @@
 * [python-script-template](./python-script-template.yaml)
 * [shell-script-template](./shell-script-template.yaml)
 * [input](./input-shell-script.yaml)
-* [stemp-template](./step-template.yaml)
+* [step template 병렬실행](./step-parallel-template.yaml)
+* [step template 순서대로 실행](./step-sequence-template.yaml)
